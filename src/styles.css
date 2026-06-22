@@ -11,6 +11,14 @@
   --font-sans: "DM Sans Variable", sans-serif;
 }
 
+@utility bg-gradient-accent {
+  background-image: var(--gradient-accent);
+}
+
+@utility bg-gradient-hero {
+  background-image: var(--gradient-hero);
+}
+
 /*
  * Design system definition.
  *
