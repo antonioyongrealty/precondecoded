@@ -79,7 +79,7 @@ function Index() {
             height={1100}
             className="h-full w-full object-cover"
           />
-          <div className="absolute inset-0 bg-[var(--gradient-hero)] opacity-90" />
+          <div className="absolute inset-0 bg-gradient-hero opacity-90" />
         </div>
 
         <div className="relative mx-auto max-w-6xl px-6 py-28 md:py-40">
@@ -126,7 +126,7 @@ function Index() {
               key={f.title}
               className="group rounded-2xl border bg-card p-8 shadow-[var(--shadow-soft)] transition-all hover:-translate-y-1 hover:shadow-[var(--shadow-card)]"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--gradient-accent)] text-primary-foreground">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-accent text-primary-foreground">
                 <f.icon className="h-6 w-6" />
               </div>
               <h3 className="mt-6 text-xl font-semibold">{f.title}</h3>
@@ -200,7 +200,7 @@ function Index() {
 
       {/* CTA */}
       <section id="contact" className="px-6 pb-24">
-        <div className="mx-auto max-w-5xl overflow-hidden rounded-3xl bg-[var(--gradient-hero)] px-8 py-16 text-center text-primary-foreground md:px-16">
+        <div className="mx-auto max-w-5xl overflow-hidden rounded-3xl bg-gradient-hero px-8 py-16 text-center text-primary-foreground md:px-16">
           <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
             Let's decode your next move
           </h2>
@@ -232,7 +232,7 @@ function Header() {
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <a href="#top" className="flex items-center gap-2">
-          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-[var(--gradient-accent)] font-display text-lg font-bold text-primary-foreground">
+          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-accent font-display text-lg font-bold text-primary-foreground">
             P
           </span>
           <span className="font-display text-lg font-bold tracking-tight">
