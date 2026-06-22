@@ -1,8 +1,15 @@
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
+@import "../node_modules/@fontsource-variable/space-grotesk/index.css";
+@import "../node_modules/@fontsource-variable/dm-sans/index.css";
 
 @custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-display: "Space Grotesk Variable", sans-serif;
+  --font-sans: "DM Sans Variable", sans-serif;
+}
 
 /*
  * Design system definition.
