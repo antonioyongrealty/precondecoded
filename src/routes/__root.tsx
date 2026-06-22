@@ -77,23 +77,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "PreCon Decoded | Modern Real Estate with Up to 1.25% Rebate" },
-      {
-        name: "description",
-        content:
-          "PreCon Decoded makes buying real estate simple and rewarding — up to 1.25% rebate on eligible purchases, expert data-driven guidance, and 7+ years of proven experience.",
-      },
-      { name: "author", content: "PreCon Decoded" },
-      { property: "og:title", content: "PreCon Decoded | Modern Real Estate" },
-      {
-        property: "og:description",
-        content:
-          "Buy real estate simply and rewardingly — up to 1.25% rebate, honest data-driven advice, and $25M+ in transactions.",
-      },
+      { title: "PreCon Decoded" },
+      { name: "description", content: "PreCon Decoded is a real estate website offering expert guidance and rebates for home buyers." },
+      { name: "author", content: "Lovable" },
+      { property: "og:title", content: "PreCon Decoded" },
+      { property: "og:description", content: "PreCon Decoded is a real estate website offering expert guidance and rebates for home buyers." },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@PreConDecoded" },
-
+      { name: "twitter:card", content: "summary" },
+      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "PreCon Decoded" },
+      { name: "twitter:description", content: "PreCon Decoded is a real estate website offering expert guidance and rebates for home buyers." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/2a0ea6cf-6089-492a-bef0-1d9662d27cc3" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/2a0ea6cf-6089-492a-bef0-1d9662d27cc3" },
     ],
     links: [
       {
