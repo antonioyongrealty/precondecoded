@@ -33,9 +33,9 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const EMAIL = "hello@precondecoded.com";
-const PHONE_DISPLAY = "(123) 456-7890";
-const PHONE_TEL = "+11234567890";
+const EMAIL = "antonioyong.realty@gmail.com";
+const PHONE_DISPLAY = "(647) 855-1557";
+const PHONE_TEL = "+16478551557";
 
 const features = [
   {
