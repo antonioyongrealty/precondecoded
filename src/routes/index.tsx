@@ -201,25 +201,29 @@ function Index() {
 
       {/* CTA */}
       <section id="contact" className="px-6 pb-24">
-        <div className="mx-auto max-w-5xl overflow-hidden rounded-3xl bg-gradient-hero px-8 py-16 text-center text-primary-foreground md:px-16">
-          <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
-            Let's decode your next move
-          </h2>
-          <p className="mx-auto mt-4 max-w-xl text-primary-foreground/85">
-            Simple, rewarding real estate is one message away.
-          </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <Button asChild size="lg" variant="accent">
-              <a href={`mailto:${EMAIL}`}>
-                <Mail className="h-4 w-4" /> Email us
-              </a>
-            </Button>
-            <Button asChild size="lg" variant="heroOutline">
-              <a href={`tel:${PHONE_TEL}`}>
-                <Phone className="h-4 w-4" /> Call us
-              </a>
-            </Button>
+        <div className="mx-auto grid max-w-6xl items-center gap-10 rounded-3xl bg-gradient-hero p-8 text-primary-foreground md:grid-cols-2 md:p-14">
+          <div>
+            <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
+              Let's decode your next move
+            </h2>
+            <p className="mt-4 max-w-md text-primary-foreground/85">
+              Simple, rewarding real estate is one message away. Send us a note
+              or reach out directly — we'll get right back to you.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Button asChild size="lg" variant="heroOutline">
+                <a href={`mailto:${EMAIL}`}>
+                  <Mail className="h-4 w-4" /> Email us
+                </a>
+              </Button>
+              <Button asChild size="lg" variant="heroOutline">
+                <a href={`tel:${PHONE_TEL}`}>
+                  <Phone className="h-4 w-4" /> {PHONE_DISPLAY}
+                </a>
+              </Button>
+            </div>
           </div>
+          <ContactForm />
         </div>
       </section>
 
