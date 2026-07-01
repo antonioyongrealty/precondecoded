@@ -18,7 +18,8 @@ export const Route = createFileRoute("/")({
     return { origin };
   },
   head: ({ loaderData }) => {
-    const imageUrl = `${loaderData.origin}/og-image.png`;
+    const origin = loaderData?.origin ?? "https://precondecoded.lovable.app";
+    const imageUrl = `${origin}/og-image.png`;
     return {
       meta: [
         { title: "PreCon Decoded | Modern Real Estate with Up to 1.25% Rebate" },
