@@ -9,6 +9,7 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ContactForm } from "@/components/ContactForm";
 import heroImage from "@/assets/hero.jpg";
 
 export const Route = createFileRoute("/")({
