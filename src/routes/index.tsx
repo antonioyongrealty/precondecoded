@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { getRequestOrigin } from "@/lib/origin.functions";
 import {
   BadgePercent,
   Compass,
@@ -12,24 +13,32 @@ import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero.jpg";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "PreCon Decoded | Modern Real Estate with Up to 1.25% Rebate" },
-      {
-        name: "description",
-        content:
-          "PreCon Decoded makes buying real estate simple and rewarding — up to 1.25% rebate, honest data-driven guidance, and 7+ years of proven experience.",
-      },
-      { property: "og:title", content: "PreCon Decoded | Modern Real Estate" },
-      {
-        property: "og:description",
-        content:
-          "Buy real estate simply and rewardingly — up to 1.25% rebate, honest advice, and $25M+ in transactions.",
-      },
-      { property: "og:image", content: heroImage },
-      { property: "twitter:image", content: heroImage },
-    ],
-  }),
+  loader: async () => {
+    const origin = await getRequestOrigin();
+    return { origin };
+  },
+  head: ({ loaderData }) => {
+    const origin = loaderData?.origin ?? "https://precondecoded.lovable.app";
+    const imageUrl = `${origin}/og-image.png`;
+    return {
+      meta: [
+        { title: "PreCon Decoded | Modern Real Estate with Up to 1.25% Rebate" },
+        {
+          name: "description",
+          content:
+            "PreCon Decoded makes buying real estate simple and rewarding — up to 1.25% rebate, honest data-driven guidance, and 7+ years of proven experience.",
+        },
+        { property: "og:title", content: "PreCon Decoded | Modern Real Estate" },
+        {
+          property: "og:description",
+          content:
+            "Buy real estate simply and rewardingly — up to 1.25% rebate, honest advice, and $25M+ in transactions.",
+        },
+        { property: "og:image", content: imageUrl },
+        { property: "twitter:image", content: imageUrl },
+      ],
+    };
+  },
   component: Index,
 });
 

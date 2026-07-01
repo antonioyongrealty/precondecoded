@@ -87,8 +87,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:site", content: "@Lovable" },
       { name: "twitter:title", content: "PreCon Decoded" },
       { name: "twitter:description", content: "PreCon Decoded is a real estate website offering expert guidance and rebates for home buyers." },
-      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/2a0ea6cf-6089-492a-bef0-1d9662d27cc3" },
-      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/2a0ea6cf-6089-492a-bef0-1d9662d27cc3" },
     ],
     links: [
       {
