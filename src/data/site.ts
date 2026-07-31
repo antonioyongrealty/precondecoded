@@ -77,7 +77,8 @@ export const reviews: Review[] = [
   },
   {
     quote:
-      "The rebate was real. It landed on closing, and it covered our land transfer tax with money left over.",
+      "The rebate was real. It landed about a month after closing, exactly as promised, with no chasing.",
+
     name: "Investor client",
     context: "2 bed, downtown Toronto",
   },

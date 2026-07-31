@@ -9,7 +9,8 @@ export const Route = createFileRoute("/about")({
   head: () => {
     const title = "About Us | PreCon Decoded";
     const description =
-      "Antonio Yong and PreCon Decoded: a pre-construction only practice in the GTA built on VIP access, plain English agreements, and a rebate of up to $25,000.";
+      "Antonio Yong and PreCon Decoded: a pre-construction only practice in the GTA built on VIP access, plain English agreements, and up to $25,000 rebated to you.";
+
     return {
       meta: [
         { title },
@@ -33,7 +34,8 @@ const principles = [
   },
   {
     title: "The rebate is in writing",
-    body: "Before you sign a worksheet you get the rebate amount, the conditions, and when it is paid. No moving targets at closing.",
+    body: "Before you sign a worksheet you get the rebate amount, the conditions, and when it is paid — one month after closing. No moving targets.",
+
   },
   {
     title: "We will talk you out of a bad deal",
