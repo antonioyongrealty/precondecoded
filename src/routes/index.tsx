@@ -31,7 +31,7 @@ export const Route = createFileRoute("/")({
     const imageUrl = `${origin}/og-image.png`;
     const title = "PreCon Decoded | VIP Pre-Construction Access + Up to $25K Rebate";
     const description =
-      "VIP access to GTA pre-construction condos and towns, with up to $25,000 of the builder commission rebated back to you on closing.";
+      "VIP access to GTA pre-construction homes, with up to $25,000 rebated to you — half of the commission the builder pays us, shared with you.";
     return {
       meta: [
         { title },
@@ -68,43 +68,54 @@ export const Route = createFileRoute("/")({
 const valueProps = [
   {
     icon: Ticket,
-    title: "VIP allocation, not the sales centre",
-    body: "You see floor plans, price lists and incentives in the platinum window, before units reach the public. That is where the best exposures and the softest deposit structures go.",
+    title: "VIP access, not the sales centre",
+    body: "You'll see floor plans, price lists and incentives in the VIP window, before units reach the public. That is where the best exposures and the softest deposit structures go.",
   },
   {
     icon: BadgeDollarSign,
-    title: "Up to $25,000 back on closing",
-    body: "The builder pays the commission either way. We hand 1.25% of the purchase price back to you, up to $25,000, instead of keeping it.",
+    title: "Up to $25,000 rebate to you",
+    body: "The builder pays us the commission. We share half of it with you, up to $25,000.",
   },
   {
     icon: FileSearch,
-    title: "Your guide through the fine print",
-    body: "Occupancy fees, development charge caps, assignment rights, HST rebate eligibility. We read the agreement with you inside the 10 day cooling off period.",
+    title: "Your pre-con guide",
+    body: "No pressure approach, just sharing information and data so you can make an informed decision: occupancy fees, development charge caps, assignment rights, HST rebate eligibility.",
   },
 ];
 
 const steps = [
   {
+    icon: CalendarClock,
+    title: "1. Book a 25 minute call",
+    body: "Schedule a call and fill out the short onboarding form.",
+  },
+  {
     icon: MapPin,
-    title: "1. Tell us the goal",
-    body: "End user or investor, budget, timeline, and the areas you would actually live in or rent out.",
+    title: "2. Onboarding call",
+    body: "We walk through the process, your criteria and the next steps.",
   },
   {
     icon: Building2,
-    title: "2. Get the shortlist",
-    body: "We send only the projects that clear our checks on builder track record, price per square foot and deposit structure.",
+    title: "3. Matched pre-cons",
+    body: "We do the work on our end and send you projects that meet your criteria.",
   },
   {
-    icon: KeyRound,
-    title: "3. Worksheet and allocation",
+    icon: FileSearch,
+    title: "4. Buy the right one",
     body: "We submit your worksheet in the VIP window and negotiate the incentives available on your unit.",
   },
   {
-    icon: CalendarClock,
-    title: "4. Rebate on closing",
-    body: "We stay with you through occupancy and final closing, and the rebate is credited when the deal closes.",
+    icon: BadgeDollarSign,
+    title: "5. Rebate shared",
+    body: "The builder pays us one month after your pre-con closes. That is when we share half our commission with you, up to $25,000.",
+  },
+  {
+    icon: KeyRound,
+    title: "6. Move in",
+    body: "Keys in hand, and your rebate in the bank.",
   },
 ];
+
 
 function Index() {
   return (
@@ -130,16 +141,21 @@ function Index() {
               <Ticket className="h-4 w-4" /> VIP pre-construction access, GTA
             </span>
             <h1 className="mt-6 font-display text-4xl font-bold leading-[1.05] md:text-6xl">
-              Buy pre-con with the inside list and{" "}
+              Buy pre-con with VIP access and{" "}
               <span className="bg-gradient-accent bg-clip-text text-transparent">
-                up to $25,000 back
+                up to $25K rebate to you
               </span>
               .
             </h1>
             <p className="mt-6 max-w-xl text-lg text-muted-foreground md:text-xl">
-              We do one thing: pre-construction. VIP allocation on GTA condos and towns, a plain
-              English read of the agreement, and 1.25% of the price rebated to you on closing.
+              We specialize in pre-construction. We share VIP access on GTA pre-construction homes
+              with you, we share up to $25K commission rebate with you, and we serve as your guide
+              in pre-cons.
             </p>
+            <p className="mt-3 max-w-xl text-sm text-muted-foreground">
+              Half of our commission shared with you.
+            </p>
+
 
             <div className="mt-9 flex flex-wrap gap-4">
               <Button asChild size="lg" variant="accent">
@@ -155,7 +171,7 @@ function Index() {
             <dl className="mt-14 grid max-w-2xl grid-cols-2 gap-6 sm:grid-cols-4">
               {[
                 ["1.25%", "Rebated to you"],
-                ["$25K", "Maximum cash back"],
+                ["$25K", "Maximum rebate to you"],
                 ["Pre-con", "Our only focus"],
                 ["GTA", "Where we work"],
               ].map(([value, label]) => (
@@ -273,7 +289,7 @@ function Index() {
           <p className="text-sm font-semibold uppercase tracking-widest text-accent">
             Rebate Calculator
           </p>
-          <h2 className="mt-3 text-3xl font-bold md:text-4xl">See your cash back before you buy</h2>
+          <h2 className="mt-3 text-3xl font-bold md:text-4xl">See your rebate before you buy</h2>
         </div>
         <div className="mt-10">
           <RebateCalculator />
@@ -287,9 +303,10 @@ function Index() {
             <p className="text-sm font-semibold uppercase tracking-widest text-accent">
               How It Works
             </p>
-            <h2 className="mt-3 text-3xl font-bold md:text-4xl">Four steps, no sales centre spin</h2>
+            <h2 className="mt-3 text-3xl font-bold md:text-4xl">Six steps, no sales centre spin</h2>
           </div>
-          <div className="mt-12 grid gap-6 md:grid-cols-4">
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
             {steps.map((s) => (
               <div key={s.title} className="rounded-2xl border border-border bg-card p-6">
                 <s.icon className="h-5 w-5 text-accent" />
@@ -339,7 +356,7 @@ function Index() {
             </div>
             <Button asChild variant="outline">
               <a href={GOOGLE_PROFILE} target="_blank" rel="noreferrer">
-                <Star className="h-4 w-4" /> Read reviews on Google
+                <Star className="h-4 w-4" /> Read all 11 reviews on Google
               </a>
             </Button>
           </div>
@@ -366,8 +383,9 @@ function Index() {
           </div>
 
           <p className="mt-6 text-xs text-muted-foreground">
-            Verified reviews live on our Google Business Profile.
+            11 verified reviews live on our Google Business Profile.
           </p>
+
         </div>
       </section>
 
@@ -379,13 +397,14 @@ function Index() {
               Your Guide
             </p>
             <h2 className="mt-3 text-3xl font-bold md:text-4xl">
-              One person, on your side, start to close
+              Your pre-con guide, start to close
             </h2>
             <p className="mt-4 text-muted-foreground">
-              I am Antonio Yong. I work with buyers who want the pre-con upside without the sales
-              centre pressure: builder due diligence, unit selection, the agreement review, and the
-              rebate in writing before you sign anything.
+              I am Antonio Yong. No pressure approach, just sharing information and data so you can
+              make an informed decision: builder due diligence, unit selection, the agreement
+              review, and the rebate in writing before you sign anything.
             </p>
+
             <Button asChild variant="accent" className="mt-7">
               <Link to="/about">
                 Read the full story <ArrowRight className="h-4 w-4" />
@@ -393,7 +412,7 @@ function Index() {
             </Button>
           </div>
           <div className="rounded-3xl border border-border bg-card p-9 shadow-[var(--shadow-card)]">
-            <h3 className="text-xl font-semibold">Start with a 15 minute call</h3>
+            <h3 className="text-xl font-semibold">Start with a 25 minute call</h3>
             <p className="mt-3 text-sm text-muted-foreground">
               No obligation. Bring your budget and timeline, leave with a shortlist and a rebate
               number.

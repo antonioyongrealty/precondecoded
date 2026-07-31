@@ -11,8 +11,9 @@ export function SiteFooter() {
           </span>
           <p className="mt-3 max-w-xs">
             VIP pre-construction access in the GTA, with up to $25,000 of the commission handed
-            back to you on closing.
+            back to you one month after closing.
           </p>
+
         </div>
         <div className="flex flex-col gap-2">
           <span className="font-medium text-foreground">Explore</span>
@@ -48,8 +49,10 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="border-t border-border/60 px-6 py-5 text-center text-xs text-muted-foreground">
-        © {new Date().getFullYear()} PreCon Decoded. Rebate amounts vary by builder commission and
-        are paid on closing. Not intended to solicit buyers or sellers under contract.
+        © {new Date().getFullYear()} PreCon Decoded. The rebate is half of our commission, up to
+        $25,000, paid one month after closing. Amounts vary by builder commission. Not intended to
+        solicit buyers or sellers under contract.
+
       </div>
     </footer>
   );
