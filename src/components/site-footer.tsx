@@ -11,8 +11,9 @@ export function SiteFooter() {
           </span>
           <p className="mt-3 max-w-xs">
             VIP pre-construction access in the GTA, with up to $25,000 of the commission handed
-            back to you on closing.
+            back to you one month after closing.
           </p>
+
         </div>
         <div className="flex flex-col gap-2">
           <span className="font-medium text-foreground">Explore</span>
