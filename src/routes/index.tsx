@@ -31,7 +31,7 @@ export const Route = createFileRoute("/")({
     const imageUrl = `${origin}/og-image.png`;
     const title = "PreCon Decoded | VIP Pre-Construction Access + Up to $25K Rebate";
     const description =
-      "VIP access to GTA pre-construction condos and towns, with up to $25,000 of the builder commission rebated back to you on closing.";
+      "VIP access to GTA pre-construction homes, with up to $25,000 rebated to you — half of the commission the builder pays us, shared with you.";
     return {
       meta: [
         { title },
@@ -397,13 +397,14 @@ function Index() {
               Your Guide
             </p>
             <h2 className="mt-3 text-3xl font-bold md:text-4xl">
-              One person, on your side, start to close
+              Your pre-con guide, start to close
             </h2>
             <p className="mt-4 text-muted-foreground">
-              I am Antonio Yong. I work with buyers who want the pre-con upside without the sales
-              centre pressure: builder due diligence, unit selection, the agreement review, and the
-              rebate in writing before you sign anything.
+              I am Antonio Yong. No pressure approach, just sharing information and data so you can
+              make an informed decision: builder due diligence, unit selection, the agreement
+              review, and the rebate in writing before you sign anything.
             </p>
+
             <Button asChild variant="accent" className="mt-7">
               <Link to="/about">
                 Read the full story <ArrowRight className="h-4 w-4" />
