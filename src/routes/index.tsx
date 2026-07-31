@@ -68,43 +68,54 @@ export const Route = createFileRoute("/")({
 const valueProps = [
   {
     icon: Ticket,
-    title: "VIP allocation, not the sales centre",
-    body: "You see floor plans, price lists and incentives in the platinum window, before units reach the public. That is where the best exposures and the softest deposit structures go.",
+    title: "VIP access, not the sales centre",
+    body: "You'll see floor plans, price lists and incentives in the VIP window, before units reach the public. That is where the best exposures and the softest deposit structures go.",
   },
   {
     icon: BadgeDollarSign,
-    title: "Up to $25,000 back on closing",
-    body: "The builder pays the commission either way. We hand 1.25% of the purchase price back to you, up to $25,000, instead of keeping it.",
+    title: "Up to $25,000 rebate to you",
+    body: "The builder pays us the commission. We share half of it with you, up to $25,000.",
   },
   {
     icon: FileSearch,
-    title: "Your guide through the fine print",
-    body: "Occupancy fees, development charge caps, assignment rights, HST rebate eligibility. We read the agreement with you inside the 10 day cooling off period.",
+    title: "Your pre-con guide",
+    body: "No pressure approach, just sharing information and data so you can make an informed decision: occupancy fees, development charge caps, assignment rights, HST rebate eligibility.",
   },
 ];
 
 const steps = [
   {
+    icon: CalendarClock,
+    title: "1. Book a 25 minute call",
+    body: "Schedule a call and fill out the short onboarding form.",
+  },
+  {
     icon: MapPin,
-    title: "1. Tell us the goal",
-    body: "End user or investor, budget, timeline, and the areas you would actually live in or rent out.",
+    title: "2. Onboarding call",
+    body: "We walk through the process, your criteria and the next steps.",
   },
   {
     icon: Building2,
-    title: "2. Get the shortlist",
-    body: "We send only the projects that clear our checks on builder track record, price per square foot and deposit structure.",
+    title: "3. Matched pre-cons",
+    body: "We do the work on our end and send you projects that meet your criteria.",
   },
   {
-    icon: KeyRound,
-    title: "3. Worksheet and allocation",
+    icon: FileSearch,
+    title: "4. Buy the right one",
     body: "We submit your worksheet in the VIP window and negotiate the incentives available on your unit.",
   },
   {
-    icon: CalendarClock,
-    title: "4. Rebate on closing",
-    body: "We stay with you through occupancy and final closing, and the rebate is credited when the deal closes.",
+    icon: BadgeDollarSign,
+    title: "5. Rebate shared",
+    body: "The builder pays us one month after your pre-con closes. That is when we share half our commission with you, up to $25,000.",
+  },
+  {
+    icon: KeyRound,
+    title: "6. Move in",
+    body: "Keys in hand, and your rebate in the bank.",
   },
 ];
+
 
 function Index() {
   return (
