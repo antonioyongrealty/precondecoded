@@ -141,16 +141,21 @@ function Index() {
               <Ticket className="h-4 w-4" /> VIP pre-construction access, GTA
             </span>
             <h1 className="mt-6 font-display text-4xl font-bold leading-[1.05] md:text-6xl">
-              Buy pre-con with the inside list and{" "}
+              Buy pre-con with VIP access and{" "}
               <span className="bg-gradient-accent bg-clip-text text-transparent">
-                up to $25,000 back
+                up to $25K rebate to you
               </span>
               .
             </h1>
             <p className="mt-6 max-w-xl text-lg text-muted-foreground md:text-xl">
-              We do one thing: pre-construction. VIP allocation on GTA condos and towns, a plain
-              English read of the agreement, and 1.25% of the price rebated to you on closing.
+              We specialize in pre-construction. We share VIP access on GTA pre-construction homes
+              with you, we share up to $25K commission rebate with you, and we serve as your guide
+              in pre-cons.
             </p>
+            <p className="mt-3 max-w-xl text-sm text-muted-foreground">
+              Half of our commission shared with you.
+            </p>
+
 
             <div className="mt-9 flex flex-wrap gap-4">
               <Button asChild size="lg" variant="accent">
