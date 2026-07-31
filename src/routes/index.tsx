@@ -1,16 +1,25 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { getRequestOrigin } from "@/lib/origin.functions";
 import {
-  BadgePercent,
-  Compass,
-  TrendingUp,
-  Mail,
-  Phone,
   ArrowRight,
-  CheckCircle2,
+  BadgeDollarSign,
+  Building2,
+  CalendarClock,
+  FileSearch,
+  KeyRound,
+  Mail,
+  MapPin,
+  Phone,
+  PlayCircle,
+  Star,
+  Ticket,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero.jpg";
+import { SiteHeader } from "@/components/site-header";
+import { SiteFooter } from "@/components/site-footer";
+import { RebateCalculator } from "@/components/rebate-calculator";
+import { EMAIL, GOOGLE_PROFILE, PHONE_DISPLAY, PHONE_TEL, projects, reviews } from "@/data/site";
+import heroImage from "@/assets/hero-precon.jpg";
 
 export const Route = createFileRoute("/")({
   loader: async () => {
@@ -20,267 +29,392 @@ export const Route = createFileRoute("/")({
   head: ({ loaderData }) => {
     const origin = loaderData?.origin ?? "https://precondecoded.lovable.app";
     const imageUrl = `${origin}/og-image.png`;
+    const title = "PreCon Decoded | VIP Pre-Construction Access + Up to $25K Rebate";
+    const description =
+      "VIP access to GTA pre-construction condos and towns, with up to $25,000 of the builder commission rebated back to you on closing.";
     return {
       meta: [
-        { title: "PreCon Decoded | Modern Real Estate with Up to 1.25% Rebate" },
-        {
-          name: "description",
-          content:
-            "PreCon Decoded makes buying real estate simple and rewarding — up to 1.25% rebate, honest data-driven guidance, and 7+ years of proven experience.",
-        },
-        { property: "og:title", content: "PreCon Decoded | Modern Real Estate" },
-        {
-          property: "og:description",
-          content:
-            "Buy real estate simply and rewardingly — up to 1.25% rebate, honest advice, and $25M+ in transactions.",
-        },
+        { title },
+        { name: "description", content: description },
+        { property: "og:title", content: title },
+        { property: "og:description", content: description },
+        { property: "og:type", content: "website" },
+        { property: "og:url", content: origin },
         { property: "og:image", content: imageUrl },
-        { property: "twitter:image", content: imageUrl },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:image", content: imageUrl },
+      ],
+      links: [{ rel: "canonical", href: `${origin}/` }],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "RealEstateAgent",
+            name: "PreCon Decoded",
+            email: EMAIL,
+            telephone: PHONE_TEL,
+            areaServed: "Greater Toronto Area",
+            sameAs: [GOOGLE_PROFILE],
+            description,
+          }),
+        },
       ],
     };
   },
   component: Index,
 });
 
-const EMAIL = "antonioyong.realty@gmail.com";
-const PHONE_DISPLAY = "(647) 855-1557";
-const PHONE_TEL = "+16478551557";
-
-const features = [
+const valueProps = [
   {
-    icon: BadgePercent,
-    title: "Modern Fees",
-    description:
-      "Get up to a 1.25% rebate on eligible home purchases. Keep more of your money where it belongs — with you.",
+    icon: Ticket,
+    title: "VIP allocation, not the sales centre",
+    body: "You see floor plans, price lists and incentives in the platinum window, before units reach the public. That is where the best exposures and the softest deposit structures go.",
   },
   {
-    icon: Compass,
-    title: "Expert Guidance",
-    description:
-      "We help you navigate every step of your real estate journey with honest, data-driven advice you can trust.",
+    icon: BadgeDollarSign,
+    title: "Up to $25,000 back on closing",
+    body: "The builder pays the commission either way. We hand 1.25% of the purchase price back to you, up to $25,000, instead of keeping it.",
   },
   {
-    icon: TrendingUp,
-    title: "Proven Experience",
-    description:
-      "With 7+ years as a realtor and $25M+ in transactions, we're dedicated to helping you decide with confidence.",
+    icon: FileSearch,
+    title: "Your guide through the fine print",
+    body: "Occupancy fees, development charge caps, assignment rights, HST rebate eligibility. We read the agreement with you inside the 10 day cooling off period.",
   },
 ];
 
-const stats = [
-  { value: "1.25%", label: "Rebate on eligible purchases" },
-  { value: "7+", label: "Years as a realtor" },
-  { value: "$25M+", label: "In transactions closed" },
+const steps = [
+  {
+    icon: MapPin,
+    title: "1. Tell us the goal",
+    body: "End user or investor, budget, timeline, and the areas you would actually live in or rent out.",
+  },
+  {
+    icon: Building2,
+    title: "2. Get the shortlist",
+    body: "We send only the projects that clear our checks on builder track record, price per square foot and deposit structure.",
+  },
+  {
+    icon: KeyRound,
+    title: "3. Worksheet and allocation",
+    body: "We submit your worksheet in the VIP window and negotiate the incentives available on your unit.",
+  },
+  {
+    icon: CalendarClock,
+    title: "4. Rebate on closing",
+    body: "We stay with you through occupancy and final closing, and the rebate is credited when the deal closes.",
+  },
 ];
 
 function Index() {
   return (
     <div className="min-h-screen bg-background">
-      <Header />
+      <SiteHeader />
 
       {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
           <img
             src={heroImage}
-            alt="Modern glass condo towers rising into a clear blue sky"
+            alt="Pre-construction condo towers lit at night in the Greater Toronto Area"
             width={1600}
             height={1100}
             className="h-full w-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-hero opacity-90" />
+          <div className="absolute inset-0 bg-gradient-hero" />
         </div>
 
-        <div className="relative mx-auto max-w-6xl px-6 py-28 md:py-40">
-          <div className="max-w-2xl">
-            <span className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/25 bg-primary-foreground/10 px-4 py-1.5 text-sm font-medium text-primary-foreground backdrop-blur">
-              <BadgePercent className="h-4 w-4" /> Up to 1.25% rebate
+        <div className="relative mx-auto max-w-6xl px-6 py-24 md:py-32">
+          <div className="max-w-3xl">
+            <span className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent/10 px-4 py-1.5 text-sm font-medium text-accent">
+              <Ticket className="h-4 w-4" /> VIP pre-construction access, GTA
             </span>
-            <h1 className="mt-6 text-4xl font-bold leading-tight tracking-tight text-primary-foreground md:text-6xl">
-              Real estate, made simple and rewarding.
+            <h1 className="mt-6 font-display text-4xl font-bold leading-[1.05] md:text-6xl">
+              Buy pre-con with the inside list and{" "}
+              <span className="bg-gradient-accent bg-clip-text text-transparent">
+                up to $25,000 back
+              </span>
+              .
             </h1>
-            <p className="mt-6 text-lg text-primary-foreground/85 md:text-xl">
-              At PreCon Decoded, we cut the noise with honest, data-driven advice
-              and modern fees — so you can buy your next home with total
-              confidence.
+            <p className="mt-6 max-w-xl text-lg text-muted-foreground md:text-xl">
+              We do one thing: pre-construction. VIP allocation on GTA condos and towns, a plain
+              English read of the agreement, and 1.25% of the price rebated to you on closing.
             </p>
+
             <div className="mt-9 flex flex-wrap gap-4">
               <Button asChild size="lg" variant="accent">
-                <a href={`mailto:${EMAIL}`}>
-                  Get started <ArrowRight className="h-4 w-4" />
+                <a href="#projects">
+                  See current projects <ArrowRight className="h-4 w-4" />
                 </a>
               </Button>
-              <Button asChild size="lg" variant="heroOutline">
-                <a href="#how">How it works</a>
+              <Button asChild size="lg" variant="outline">
+                <a href="#rebate-calculator">Calculate my rebate</a>
               </Button>
             </div>
+
+            <dl className="mt-14 grid max-w-2xl grid-cols-2 gap-6 sm:grid-cols-4">
+              {[
+                ["1.25%", "Rebated to you"],
+                ["$25K", "Maximum cash back"],
+                ["Pre-con", "Our only focus"],
+                ["GTA", "Where we work"],
+              ].map(([value, label]) => (
+                <div key={label} className="rounded-2xl border border-border/70 bg-card/60 p-4 backdrop-blur">
+                  <dt className="font-display text-2xl font-bold text-accent">{value}</dt>
+                  <dd className="mt-1 text-xs text-muted-foreground">{label}</dd>
+                </div>
+              ))}
+            </dl>
           </div>
         </div>
       </section>
 
-      {/* Features grid */}
-      <section id="how" className="mx-auto max-w-6xl px-6 py-20 md:py-28">
-        <div className="mx-auto max-w-2xl text-center">
+      {/* Value props */}
+      <section id="why-precon-decoded" className="mx-auto max-w-6xl px-6 py-20 md:py-24">
+        <div className="max-w-2xl">
           <p className="text-sm font-semibold uppercase tracking-widest text-accent">
             Why PreCon Decoded
           </p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight md:text-4xl">
-            Everything you need to buy smarter
+          <h2 className="mt-3 text-3xl font-bold md:text-4xl">
+            Specialists, not generalists, and we pay you to work with us
           </h2>
         </div>
-
-        <div className="mt-14 grid gap-6 md:grid-cols-3">
-          {features.map((f) => (
+        <div className="mt-12 grid gap-6 md:grid-cols-3">
+          {valueProps.map((v) => (
             <article
-              key={f.title}
-              className="group rounded-2xl border bg-card p-8 shadow-[var(--shadow-soft)] transition-all hover:-translate-y-1 hover:shadow-[var(--shadow-card)]"
+              key={v.title}
+              className="rounded-2xl border border-border bg-card p-7 transition-all hover:-translate-y-1 hover:shadow-[var(--glow-accent)]"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-accent text-primary-foreground">
-                <f.icon className="h-6 w-6" />
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-accent text-accent-foreground">
+                <v.icon className="h-5 w-5" />
               </div>
-              <h3 className="mt-6 text-xl font-semibold">{f.title}</h3>
-              <p className="mt-3 text-muted-foreground">{f.description}</p>
+              <h3 className="mt-6 text-lg font-semibold">{v.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{v.body}</p>
             </article>
           ))}
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="bg-primary text-primary-foreground">
-        <div className="mx-auto grid max-w-6xl gap-10 px-6 py-16 sm:grid-cols-3">
-          {stats.map((s) => (
-            <div key={s.label} className="text-center">
-              <div className="text-4xl font-bold tracking-tight md:text-5xl">
-                {s.value}
-              </div>
-              <p className="mt-2 text-primary-foreground/75">{s.label}</p>
+      {/* Projects */}
+      <section id="projects" className="border-y border-border/60 bg-card/30 py-20 md:py-24">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <div className="max-w-2xl">
+              <p className="text-sm font-semibold uppercase tracking-widest text-accent">
+                Projects
+              </p>
+              <h2 className="mt-3 text-3xl font-bold md:text-4xl">Current GTA allocations</h2>
+              <p className="mt-3 text-muted-foreground">
+                A sample of what we track. The live list, price sheets and floor plans go out by
+                email as allocations open.
+              </p>
             </div>
-          ))}
-        </div>
-      </section>
+            <Button asChild variant="accent">
+              <a href={`mailto:${EMAIL}?subject=Send%20me%20the%20live%20project%20list`}>
+                Get the full list
+              </a>
+            </Button>
+          </div>
 
-      {/* About */}
-      <section className="mx-auto grid max-w-6xl items-center gap-12 px-6 py-20 md:grid-cols-2 md:py-28">
-        <div>
-          <p className="text-sm font-semibold uppercase tracking-widest text-accent">
-            About us
-          </p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight md:text-4xl">
-            Confident decisions, backed by real data
-          </h2>
-          <p className="mt-5 text-lg text-muted-foreground">
-            Buying real estate shouldn't feel like decoding a foreign language.
-            We bring clarity, transparency, and modern fees to every transaction
-            — guiding you with the same honesty we'd want for our own families.
-          </p>
-          <ul className="mt-8 space-y-4">
-            {[
-              "Up to 1.25% rebate on eligible home purchases",
-              "Honest, data-driven advice at every step",
-              "7+ years of experience and $25M+ closed",
-            ].map((item) => (
-              <li key={item} className="flex items-start gap-3">
-                <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
-                <span>{item}</span>
-              </li>
+          <div className="mt-12 grid gap-6 sm:grid-cols-2">
+            {projects.map((p) => (
+              <article
+                key={p.name}
+                className="flex flex-col rounded-2xl border border-border bg-card p-7 transition-all hover:-translate-y-1 hover:shadow-[var(--glow-accent)]"
+              >
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <h3 className="font-display text-xl font-bold">{p.name}</h3>
+                    <p className="mt-1 text-sm text-muted-foreground">{p.area}</p>
+                  </div>
+                  <span className="rounded-full border border-accent/40 bg-accent/10 px-3 py-1 text-xs font-medium text-accent">
+                    {p.status}
+                  </span>
+                </div>
+
+                <div className="mt-6 grid grid-cols-2 gap-4 border-y border-border/70 py-4">
+                  <div>
+                    <p className="text-xs uppercase tracking-wide text-muted-foreground">From</p>
+                    <p className="font-display text-lg font-semibold">{p.priceFrom}</p>
+                  </div>
+                  <div>
+                    <p className="text-xs uppercase tracking-wide text-muted-foreground">
+                      Occupancy
+                    </p>
+                    <p className="font-display text-lg font-semibold">{p.occupancy}</p>
+                  </div>
+                </div>
+
+                <ul className="mt-4 flex flex-wrap gap-2">
+                  {p.highlights.map((h) => (
+                    <li
+                      key={h}
+                      className="rounded-lg bg-secondary px-2.5 py-1 text-xs text-secondary-foreground"
+                    >
+                      {h}
+                    </li>
+                  ))}
+                </ul>
+
+                <Button asChild variant="outline" className="mt-6 w-full">
+                  <a href={`mailto:${EMAIL}?subject=${encodeURIComponent(`Info on ${p.name}`)}`}>
+                    Request floor plans and pricing
+                  </a>
+                </Button>
+              </article>
             ))}
-          </ul>
-        </div>
-        <div className="rounded-3xl border bg-card p-10 shadow-[var(--shadow-card)]">
-          <h3 className="text-2xl font-semibold">Ready when you are</h3>
-          <p className="mt-3 text-muted-foreground">
-            Reach out for a no-pressure conversation about your goals. We'll walk
-            you through your options and the rebate you may qualify for.
-          </p>
-          <div className="mt-8 space-y-3">
-            <Button asChild size="lg" variant="accent" className="w-full">
-              <a href={`mailto:${EMAIL}`}>
-                <Mail className="h-4 w-4" /> {EMAIL}
-              </a>
-            </Button>
-            <Button asChild size="lg" variant="outline" className="w-full">
-              <a href={`tel:${PHONE_TEL}`}>
-                <Phone className="h-4 w-4" /> {PHONE_DISPLAY}
-              </a>
-            </Button>
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section id="contact" className="px-6 pb-24">
-        <div className="mx-auto max-w-5xl overflow-hidden rounded-3xl bg-gradient-hero px-8 py-16 text-center text-primary-foreground md:px-16">
-          <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
-            Let's decode your next move
-          </h2>
-          <p className="mx-auto mt-4 max-w-xl text-primary-foreground/85">
-            Simple, rewarding real estate is one message away.
+      {/* Rebate calculator */}
+      <section id="rebate-calculator" className="mx-auto max-w-6xl px-6 py-20 md:py-24">
+        <div className="max-w-2xl">
+          <p className="text-sm font-semibold uppercase tracking-widest text-accent">
+            Rebate Calculator
           </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <Button asChild size="lg" variant="accent">
-              <a href={`mailto:${EMAIL}`}>
-                <Mail className="h-4 w-4" /> Email us
-              </a>
-            </Button>
-            <Button asChild size="lg" variant="heroOutline">
-              <a href={`tel:${PHONE_TEL}`}>
-                <Phone className="h-4 w-4" /> Call us
-              </a>
-            </Button>
+          <h2 className="mt-3 text-3xl font-bold md:text-4xl">See your cash back before you buy</h2>
+        </div>
+        <div className="mt-10">
+          <RebateCalculator />
+        </div>
+      </section>
+
+      {/* How it works */}
+      <section id="how-it-works" className="border-y border-border/60 bg-card/30 py-20 md:py-24">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="max-w-2xl">
+            <p className="text-sm font-semibold uppercase tracking-widest text-accent">
+              How It Works
+            </p>
+            <h2 className="mt-3 text-3xl font-bold md:text-4xl">Four steps, no sales centre spin</h2>
+          </div>
+          <div className="mt-12 grid gap-6 md:grid-cols-4">
+            {steps.map((s) => (
+              <div key={s.title} className="rounded-2xl border border-border bg-card p-6">
+                <s.icon className="h-5 w-5 text-accent" />
+                <h3 className="mt-5 font-semibold">{s.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.body}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <Footer />
+      {/* Video */}
+      <section id="watch" className="mx-auto max-w-6xl px-6 py-20 md:py-24">
+        <div className="grid items-center gap-10 md:grid-cols-2">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-widest text-accent">Watch</p>
+            <h2 className="mt-3 text-3xl font-bold md:text-4xl">Pre-con, decoded on video</h2>
+            <p className="mt-4 text-muted-foreground">
+              Short walkthroughs of the things that cost buyers money: occupancy fees, capped
+              development charges, assignment clauses, and how to read a price list against
+              comparable resale.
+            </p>
+            <Button asChild variant="accent" className="mt-7">
+              <a href={`mailto:${EMAIL}?subject=Send%20me%20the%20next%20video`}>
+                Get new videos by email
+              </a>
+            </Button>
+          </div>
+          <div className="flex aspect-video items-center justify-center rounded-3xl border border-border bg-card text-center">
+            <div className="px-6">
+              <PlayCircle className="mx-auto h-10 w-10 text-accent" />
+              <p className="mt-3 text-sm text-muted-foreground">
+                Video slot ready. Send the YouTube link and it goes live here.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Reviews */}
+      <section id="reviews" className="border-y border-border/60 bg-card/30 py-20 md:py-24">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <div className="max-w-2xl">
+              <p className="text-sm font-semibold uppercase tracking-widest text-accent">Reviews</p>
+              <h2 className="mt-3 text-3xl font-bold md:text-4xl">What clients say</h2>
+            </div>
+            <Button asChild variant="outline">
+              <a href={GOOGLE_PROFILE} target="_blank" rel="noreferrer">
+                <Star className="h-4 w-4" /> Read reviews on Google
+              </a>
+            </Button>
+          </div>
+
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {reviews.map((r) => (
+              <figure key={r.name + r.context} className="rounded-2xl border border-border bg-card p-7">
+                <div className="flex gap-1 text-accent">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Star key={i} className="h-4 w-4 fill-current" />
+                  ))}
+                </div>
+                <blockquote className="mt-5 text-sm leading-relaxed text-muted-foreground">
+                  “{r.quote}”
+                </blockquote>
+                <figcaption className="mt-5 text-sm font-medium">
+                  {r.name}
+                  <span className="block text-xs font-normal text-muted-foreground">
+                    {r.context}
+                  </span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+
+          <p className="mt-6 text-xs text-muted-foreground">
+            Verified reviews live on our Google Business Profile.
+          </p>
+        </div>
+      </section>
+
+      {/* Guide / about teaser */}
+      <section id="your-guide" className="mx-auto max-w-6xl px-6 py-20 md:py-24">
+        <div className="grid items-center gap-10 md:grid-cols-2">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-widest text-accent">
+              Your Guide
+            </p>
+            <h2 className="mt-3 text-3xl font-bold md:text-4xl">
+              One person, on your side, start to close
+            </h2>
+            <p className="mt-4 text-muted-foreground">
+              I am Antonio Yong. I work with buyers who want the pre-con upside without the sales
+              centre pressure: builder due diligence, unit selection, the agreement review, and the
+              rebate in writing before you sign anything.
+            </p>
+            <Button asChild variant="accent" className="mt-7">
+              <Link to="/about">
+                Read the full story <ArrowRight className="h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
+          <div className="rounded-3xl border border-border bg-card p-9 shadow-[var(--shadow-card)]">
+            <h3 className="text-xl font-semibold">Start with a 15 minute call</h3>
+            <p className="mt-3 text-sm text-muted-foreground">
+              No obligation. Bring your budget and timeline, leave with a shortlist and a rebate
+              number.
+            </p>
+            <div className="mt-7 space-y-3">
+              <Button asChild size="lg" variant="accent" className="w-full">
+                <a href={`tel:${PHONE_TEL}`}>
+                  <Phone className="h-4 w-4" /> {PHONE_DISPLAY}
+                </a>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="w-full">
+                <a href={`mailto:${EMAIL}`}>
+                  <Mail className="h-4 w-4" /> {EMAIL}
+                </a>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <SiteFooter />
     </div>
-  );
-}
-
-function Header() {
-  return (
-    <header className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <a href="#top" className="flex items-center gap-2">
-          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-accent font-display text-lg font-bold text-primary-foreground">
-            P
-          </span>
-          <span className="font-display text-lg font-bold tracking-tight">
-            PreCon Decoded
-          </span>
-        </a>
-        <nav className="hidden items-center gap-8 text-sm font-medium md:flex">
-          <a href="#how" className="text-muted-foreground transition-colors hover:text-foreground">
-            Why us
-          </a>
-          <a href="#contact" className="text-muted-foreground transition-colors hover:text-foreground">
-            Contact
-          </a>
-        </nav>
-        <Button asChild variant="accent" size="sm">
-          <a href={`mailto:${EMAIL}`}>Get started</a>
-        </Button>
-      </div>
-    </header>
-  );
-}
-
-function Footer() {
-  return (
-    <footer className="border-t bg-secondary/50">
-      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 py-10 text-sm text-muted-foreground md:flex-row">
-        <span className="font-display font-semibold text-foreground">
-          PreCon Decoded
-        </span>
-        <div className="flex flex-wrap items-center justify-center gap-6">
-          <a href={`mailto:${EMAIL}`} className="transition-colors hover:text-foreground">
-            {EMAIL}
-          </a>
-          <a href={`tel:${PHONE_TEL}`} className="transition-colors hover:text-foreground">
-            {PHONE_DISPLAY}
-          </a>
-        </div>
-        <span>© {new Date().getFullYear()} PreCon Decoded</span>
-      </div>
-    </footer>
   );
 }
