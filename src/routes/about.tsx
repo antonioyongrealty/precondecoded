@@ -56,23 +56,34 @@ function About() {
           <p>
             PreCon Decoded started with a simple frustration. Buyers were walking into sales centres
             with a floor plan, a deposit cheque and no way to judge whether the price made sense.
-            The information that mattered, price per square foot against comparable resale, the
-            builder's delivery record, what the occupancy period would actually cost, sat with
-            people who were paid to sell the building.
+            We didn't want that to happen to anyone else.
           </p>
           <p>
-            I am Antonio Yong, a licensed realtor in the Greater Toronto Area. My practice is
-            pre-construction: VIP and platinum allocations, worksheet strategy, and the agreement
-            review that happens inside the ten day cooling off period. Clients come to me for the
-            access and stay because someone finally explained the deal to them in plain language.
+            PreCon Decoded was built on a simple idea: buyers deserve to understand exactly what
+            they're getting into — the contract, the risks, the true cost — before they sign
+            anything. No pressure, no sales scripts, no hiding behind jargon.
           </p>
           <p>
-            The rebate is part of the same idea. The builder pays a commission whether or not you
-            bring an agent, so a portion of it should come back to you. We return 1.25% of the
-            purchase price, up to $25,000, credited on closing. For most buyers that covers land
-            transfer tax outright.
+            It's why we're upfront about our fees. It's why we walk clients through the fine print
+            builders hope they'll skip. And it's why we see ourselves less as salespeople and more
+            as a check against an industry that too often profits from confusion.
+          </p>
+          <p>
+            This is a movement toward lower fees and real transparency in pre-construction real
+            estate — one buyer at a time.
+          </p>
+          <p>
+            I am Antonio Yong, a licensed realtor in the Greater Toronto Area. We specialize in
+            pre-construction: VIP access on GTA pre-construction homes, worksheet strategy, and the
+            agreement review that happens inside the ten day cooling off period.
+          </p>
+          <p>
+            The rebate is part of the same idea. The builder pays us the commission. We share half
+            of it with you — 1.25% of the purchase price, up to $25,000, paid one month after your
+            pre-con closes.
           </p>
         </div>
+
 
         <div className="mt-14 grid gap-5">
           {principles.map((p) => (
