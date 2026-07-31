@@ -289,7 +289,7 @@ function Index() {
           <p className="text-sm font-semibold uppercase tracking-widest text-accent">
             Rebate Calculator
           </p>
-          <h2 className="mt-3 text-3xl font-bold md:text-4xl">See your cash back before you buy</h2>
+          <h2 className="mt-3 text-3xl font-bold md:text-4xl">See your rebate before you buy</h2>
         </div>
         <div className="mt-10">
           <RebateCalculator />
@@ -303,9 +303,10 @@ function Index() {
             <p className="text-sm font-semibold uppercase tracking-widest text-accent">
               How It Works
             </p>
-            <h2 className="mt-3 text-3xl font-bold md:text-4xl">Four steps, no sales centre spin</h2>
+            <h2 className="mt-3 text-3xl font-bold md:text-4xl">Six steps, no sales centre spin</h2>
           </div>
-          <div className="mt-12 grid gap-6 md:grid-cols-4">
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
             {steps.map((s) => (
               <div key={s.title} className="rounded-2xl border border-border bg-card p-6">
                 <s.icon className="h-5 w-5 text-accent" />
@@ -382,8 +383,9 @@ function Index() {
           </div>
 
           <p className="mt-6 text-xs text-muted-foreground">
-            Verified reviews live on our Google Business Profile.
+            11 verified reviews live on our Google Business Profile.
           </p>
+
         </div>
       </section>
 
