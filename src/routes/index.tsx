@@ -171,7 +171,7 @@ function Index() {
             <dl className="mt-14 grid max-w-2xl grid-cols-2 gap-6 sm:grid-cols-4">
               {[
                 ["1.25%", "Rebated to you"],
-                ["$25K", "Maximum cash back"],
+                ["$25K", "Maximum rebate to you"],
                 ["Pre-con", "Our only focus"],
                 ["GTA", "Where we work"],
               ].map(([value, label]) => (
@@ -412,7 +412,7 @@ function Index() {
             </Button>
           </div>
           <div className="rounded-3xl border border-border bg-card p-9 shadow-[var(--shadow-card)]">
-            <h3 className="text-xl font-semibold">Start with a 15 minute call</h3>
+            <h3 className="text-xl font-semibold">Start with a 25 minute call</h3>
             <p className="mt-3 text-sm text-muted-foreground">
               No obligation. Bring your budget and timeline, leave with a shortlist and a rebate
               number.

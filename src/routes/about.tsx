@@ -99,7 +99,7 @@ function About() {
         <div className="mt-14 rounded-3xl border border-border bg-card p-9 shadow-[var(--shadow-card)]">
           <h2 className="text-2xl font-semibold">Let's talk</h2>
           <p className="mt-3 text-muted-foreground">
-            Fifteen minutes is enough to know whether pre-con fits your plan.
+            Twenty-five minutes is enough to know whether pre-con fits your plan.
           </p>
           <div className="mt-7 space-y-3">
             <Button asChild size="lg" variant="accent" className="w-full">
