@@ -35,7 +35,6 @@ const principles = [
   {
     title: "The rebate is in writing",
     body: "Before you sign a worksheet you get the rebate amount, the conditions, and when it is paid — one month after closing. No moving targets.",
-
   },
   {
     title: "We will talk you out of a bad deal",
@@ -51,38 +50,37 @@ function About() {
       <section className="mx-auto max-w-3xl px-6 py-20 md:py-28">
         <p className="text-sm font-semibold uppercase tracking-widest text-accent">About Us</p>
         <h1 className="mt-3 text-4xl font-bold md:text-5xl">
-          Pre-construction, without the guesswork
+          PreCon Decoded was born out of frustration.
         </h1>
 
         <div className="mt-8 space-y-5 text-lg leading-relaxed text-muted-foreground">
           <p>
-            PreCon Decoded started with a simple frustration. Buyers were walking into sales centres
-            with a floor plan, a deposit cheque and no way to judge whether the price made sense.
-            We didn't want that to happen to anyone else.
+            In 2022, at the peak of the GTA real estate market, Kim bought her condo. She trusted
+            her real estate agent to look out for her. Instead, she ended up with buyer's regret.
+            The offer went in without any conditions to protect her, and she overpaid for it.
           </p>
           <p>
-            PreCon Decoded was built on a simple idea: buyers deserve to understand exactly what
-            they're getting into — the contract, the risks, the true cost — before they sign
-            anything. No pressure, no sales scripts, no hiding behind jargon.
+            Antonio was already a licensed realtor at the time, and watching someone he cared about
+            go through that experience confirmed exactly why he'd gotten into this business. It's the
+            reason PreCon Decoded exists today. No buyer should have to learn the hard way that not
+            every agent has their back.
           </p>
           <p>
-            It's why we're upfront about our fees. It's why we walk clients through the fine print
-            builders hope they'll skip. And it's why we see ourselves less as salespeople and more
-            as a check against an industry that too often profits from confusion.
+            Antonio has closed more than $30M in real estate transactions and built PreCon Decoded
+            around a single specialty: pre-construction. Over the years he's built direct
+            relationships with builders across the GTA, earning VIP access to inventory on most major
+            projects long before the general public ever sees it.
           </p>
           <p>
-            This is a movement toward lower fees and real transparency in pre-construction real
-            estate — one buyer at a time.
+            We built PreCon Decoded around what Kim didn't get: real protection, real transparency,
+            and real advocacy. That means VIP access to inventory, commission rebates up to 1.25%,
+            and straight, no jargon answers on the things that actually matter. Conditions that
+            protect you. Tarion warranty coverage. HST rebates. Bank appraisals. Development charge
+            caps.
           </p>
           <p>
-            I am Antonio Yong, a licensed realtor in the Greater Toronto Area. We specialize in
-            pre-construction: VIP access on GTA pre-construction homes, worksheet strategy, and the
-            agreement review that happens inside the ten day cooling off period.
-          </p>
-          <p>
-            The rebate is part of the same idea. The builder pays us the commission. We share half
-            of it with you — 1.25% of the purchase price, up to $25,000, paid one month after your
-            pre-con closes.
+            We don't want anyone to go through what Kim did. That's our promise: modern fees,
+            transparent service, and an agent who's actually on your side.
           </p>
         </div>
 
