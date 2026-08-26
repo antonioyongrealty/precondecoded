@@ -29,6 +29,14 @@ export function SiteFooter() {
           <Link to="/about" className="transition-colors hover:text-foreground">
             About Us
           </Link>
+          <a
+            href={ONBOARDING_FORM}
+            target="_blank"
+            rel="noreferrer"
+            className="transition-colors hover:text-foreground"
+          >
+            Get Started
+          </a>
         </div>
         <div className="flex flex-col gap-2">
           <span className="font-medium text-foreground">Contact</span>
