@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { EMAIL, NAV } from "@/data/site";
+import { NAV, ONBOARDING_FORM } from "@/data/site";
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
@@ -38,7 +38,9 @@ export function SiteHeader() {
 
         <div className="flex items-center gap-2">
           <Button asChild variant="accent" size="sm" className="hidden sm:inline-flex">
-            <a href={`mailto:${EMAIL}?subject=VIP%20pre-construction%20access`}>Book a call</a>
+            <a href={ONBOARDING_FORM} target="_blank" rel="noreferrer">
+              Get started
+            </a>
           </Button>
           <button
             type="button"

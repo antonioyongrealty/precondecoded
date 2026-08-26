@@ -2,6 +2,8 @@ export const EMAIL = "antonioyong.realty@gmail.com";
 export const PHONE_DISPLAY = "(647) 855-1557";
 export const PHONE_TEL = "+16478551557";
 export const GOOGLE_PROFILE = "https://share.google/rK3fjtlqQiAwyZHn9";
+export const ONBOARDING_FORM =
+  "https://docs.google.com/forms/d/e/1FAIpQLSc_1rGFi7ElHC0_C5sC1RWGS2UCJTsf1ZDCdSC7Jcs6NQaEbg/viewform?usp=pp_url";
 
 export const NAV = [
   { label: "Projects", href: "/#projects" },
