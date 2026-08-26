@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { EMAIL, GOOGLE_PROFILE, PHONE_DISPLAY, PHONE_TEL } from "@/data/site";
+import { EMAIL, GOOGLE_PROFILE, ONBOARDING_FORM, PHONE_DISPLAY, PHONE_TEL } from "@/data/site";
 
 export function SiteFooter() {
   return (
@@ -29,6 +29,14 @@ export function SiteFooter() {
           <Link to="/about" className="transition-colors hover:text-foreground">
             About Us
           </Link>
+          <a
+            href={ONBOARDING_FORM}
+            target="_blank"
+            rel="noreferrer"
+            className="transition-colors hover:text-foreground"
+          >
+            Get Started
+          </a>
         </div>
         <div className="flex flex-col gap-2">
           <span className="font-medium text-foreground">Contact</span>

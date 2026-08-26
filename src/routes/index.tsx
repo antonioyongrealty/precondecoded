@@ -18,7 +18,15 @@ import { Button } from "@/components/ui/button";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { RebateCalculator } from "@/components/rebate-calculator";
-import { EMAIL, GOOGLE_PROFILE, PHONE_DISPLAY, PHONE_TEL, projects, reviews } from "@/data/site";
+import {
+  EMAIL,
+  GOOGLE_PROFILE,
+  ONBOARDING_FORM,
+  PHONE_DISPLAY,
+  PHONE_TEL,
+  projects,
+  reviews,
+} from "@/data/site";
 import heroImage from "@/assets/hero-precon.jpg";
 
 export const Route = createFileRoute("/")({
@@ -159,12 +167,12 @@ function Index() {
 
             <div className="mt-9 flex flex-wrap gap-4">
               <Button asChild size="lg" variant="accent">
-                <a href="#projects">
-                  See current projects <ArrowRight className="h-4 w-4" />
+                <a href={ONBOARDING_FORM} target="_blank" rel="noreferrer">
+                  Start your onboarding <ArrowRight className="h-4 w-4" />
                 </a>
               </Button>
               <Button asChild size="lg" variant="outline">
-                <a href="#rebate-calculator">Calculate my rebate</a>
+                <a href="#projects">See current projects</a>
               </Button>
             </div>
 
@@ -226,7 +234,7 @@ function Index() {
               </p>
             </div>
             <Button asChild variant="accent">
-              <a href={`mailto:${EMAIL}?subject=Send%20me%20the%20live%20project%20list`}>
+              <a href={ONBOARDING_FORM} target="_blank" rel="noreferrer">
                 Get the full list
               </a>
             </Button>
@@ -273,7 +281,7 @@ function Index() {
                 </ul>
 
                 <Button asChild variant="outline" className="mt-6 w-full">
-                  <a href={`mailto:${EMAIL}?subject=${encodeURIComponent(`Info on ${p.name}`)}`}>
+                  <a href={ONBOARDING_FORM} target="_blank" rel="noreferrer">
                     Request floor plans and pricing
                   </a>
                 </Button>
@@ -315,6 +323,14 @@ function Index() {
               </div>
             ))}
           </div>
+          <div className="mt-12 flex flex-wrap items-center gap-4">
+            <Button asChild size="lg" variant="accent">
+              <a href={ONBOARDING_FORM} target="_blank" rel="noreferrer">
+                Start your onboarding <ArrowRight className="h-4 w-4" />
+              </a>
+            </Button>
+            <p className="text-sm text-muted-foreground">Takes about 3 minutes.</p>
+          </div>
         </div>
       </section>
 
@@ -330,7 +346,7 @@ function Index() {
               comparable resale.
             </p>
             <Button asChild variant="accent" className="mt-7">
-              <a href={`mailto:${EMAIL}?subject=Send%20me%20the%20next%20video`}>
+              <a href={ONBOARDING_FORM} target="_blank" rel="noreferrer">
                 Get new videos by email
               </a>
             </Button>
