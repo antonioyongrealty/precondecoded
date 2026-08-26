@@ -9,7 +9,7 @@ export const Route = createFileRoute("/about")({
   head: () => {
     const title = "About Us | PreCon Decoded";
     const description =
-      "Antonio Yong and PreCon Decoded: a pre-construction only practice in the GTA built on VIP access, plain English agreements, and up to $25,000 rebated to you.";
+      "Antonio Yong and PreCon Decoded: a pre-construction specialization in the GTA built on VIP access, plain English agreements, and up to $25,000 rebated to you.";
 
     return {
       meta: [
@@ -29,8 +29,8 @@ export const Route = createFileRoute("/about")({
 
 const principles = [
   {
-    title: "Pre-con only",
-    body: "Resale agents dabble in pre-construction. We live in it, which is why we can tell you when a price list is out of step with the neighbourhood.",
+    title: "Pre-con specialization",
+    body: "Resale agents dabble in pre-construction. We specialize in it, which is why we can tell you when a price list is out of step with the neighbourhood.",
   },
   {
     title: "The rebate is in writing",

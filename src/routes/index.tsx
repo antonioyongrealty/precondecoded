@@ -172,7 +172,7 @@ function Index() {
               {[
                 ["1.25%", "Rebated to you"],
                 ["$25K", "Maximum rebate to you"],
-                ["Pre-con", "Our only focus"],
+                ["Pre-con", "Our specialization"],
                 ["GTA", "Where we work"],
               ].map(([value, label]) => (
                 <div key={label} className="rounded-2xl border border-border/70 bg-card/60 p-4 backdrop-blur">
