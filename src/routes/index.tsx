@@ -10,7 +10,6 @@ import {
   Mail,
   MapPin,
   Phone,
-  PlayCircle,
   Star,
   Ticket,
 } from "lucide-react";
