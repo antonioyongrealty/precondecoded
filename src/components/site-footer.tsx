@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { EMAIL, GOOGLE_PROFILE, PHONE_DISPLAY, PHONE_TEL } from "@/data/site";
+import { EMAIL, GOOGLE_PROFILE, ONBOARDING_FORM, PHONE_DISPLAY, PHONE_TEL } from "@/data/site";
 
 export function SiteFooter() {
   return (

@@ -281,7 +281,7 @@ function Index() {
                 </ul>
 
                 <Button asChild variant="outline" className="mt-6 w-full">
-                  <a href={`mailto:${EMAIL}?subject=${encodeURIComponent(`Info on ${p.name}`)}`}>
+                  <a href={ONBOARDING_FORM} target="_blank" rel="noreferrer">
                     Request floor plans and pricing
                   </a>
                 </Button>
@@ -322,6 +322,14 @@ function Index() {
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.body}</p>
               </div>
             ))}
+          </div>
+          <div className="mt-12 flex flex-wrap items-center gap-4">
+            <Button asChild size="lg" variant="accent">
+              <a href={ONBOARDING_FORM} target="_blank" rel="noreferrer">
+                Start your onboarding <ArrowRight className="h-4 w-4" />
+              </a>
+            </Button>
+            <p className="text-sm text-muted-foreground">Takes about 3 minutes.</p>
           </div>
         </div>
       </section>
