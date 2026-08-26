@@ -60,10 +60,9 @@ function About() {
             The offer went in without any conditions to protect her, and she overpaid for it.
           </p>
           <p>
-            Antonio was already a licensed realtor at the time, and watching someone he cared about
-            go through that experience confirmed exactly why he'd gotten into this business. It's the
-            reason PreCon Decoded exists today. No buyer should have to learn the hard way that not
-            every agent has their back.
+            Antonio met Kim a couple months later. Hearing what she'd been through confirmed exactly
+            why he'd gotten into this business. It's the reason PreCon Decoded exists today. No
+            buyer should have to learn the hard way that not every agent has their back.
           </p>
           <p>
             Antonio has closed more than $30M in real estate transactions and built PreCon Decoded
