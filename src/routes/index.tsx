@@ -260,7 +260,7 @@ function Index() {
             </div>
             <Button asChild variant="outline">
               <a href={GOOGLE_PROFILE} target="_blank" rel="noreferrer">
-                <Star className="h-4 w-4" /> Read all 12 reviews on Google
+                <Star className="h-4 w-4" /> Read Google Reviews
               </a>
             </Button>
           </div>
