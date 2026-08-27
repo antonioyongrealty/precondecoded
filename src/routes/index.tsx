@@ -333,23 +333,24 @@ function Index() {
       </section>
 
 
-      {/* Projects */}
+      {/* Featured Projects */}
       <section id="projects" className="border-y border-border/60 bg-card/30 py-20 md:py-24">
         <div className="mx-auto max-w-6xl px-6">
           <div className="flex flex-wrap items-end justify-between gap-4">
             <div className="max-w-2xl">
               <p className="text-sm font-semibold uppercase tracking-widest text-accent">
-                Projects
+                Featured Projects
               </p>
-              <h2 className="mt-3 text-3xl font-bold md:text-4xl">Current GTA allocations</h2>
+              <h2 className="mt-3 text-3xl font-bold md:text-4xl">
+                Featured GTA pre-construction projects
+              </h2>
               <p className="mt-3 text-muted-foreground">
-                A sample of what we track. The live list, price sheets and floor plans go out by
-                email as allocations open.
+                Explore our latest selection of new home opportunities across the GTA.
               </p>
             </div>
             <Button asChild variant="accent">
               <a href={ONBOARDING_FORM} target="_blank" rel="noreferrer">
-                Get the full list
+                Get VIP access
               </a>
             </Button>
           </div>
@@ -363,7 +364,9 @@ function Index() {
                 <div className="flex items-start justify-between gap-4">
                   <div>
                     <h3 className="font-display text-xl font-bold">{p.name}</h3>
-                    <p className="mt-1 text-sm text-muted-foreground">{p.area}</p>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      {p.developer} | {p.area}
+                    </p>
                   </div>
                   <span className="rounded-full border border-accent/40 bg-accent/10 px-3 py-1 text-xs font-medium text-accent">
                     {p.status}
@@ -383,12 +386,13 @@ function Index() {
                   </div>
                 </div>
 
-                <ul className="mt-4 flex flex-wrap gap-2">
+                <ul className="mt-4 flex flex-col gap-2">
                   {p.highlights.map((h) => (
                     <li
                       key={h}
-                      className="rounded-lg bg-secondary px-2.5 py-1 text-xs text-secondary-foreground"
+                      className="flex items-start gap-2 text-sm text-muted-foreground"
                     >
+                      <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent" />
                       {h}
                     </li>
                   ))}
@@ -396,12 +400,17 @@ function Index() {
 
                 <Button asChild variant="outline" className="mt-6 w-full">
                   <a href={ONBOARDING_FORM} target="_blank" rel="noreferrer">
-                    Request floor plans and pricing
+                    Learn more / Get VIP access
                   </a>
                 </Button>
               </article>
             ))}
           </div>
+
+          <p className="mt-10 text-center text-xs text-muted-foreground">
+            Prices, occupancy dates, incentives, and availability are subject to change. Contact us
+            for the latest information and VIP access.
+          </p>
         </div>
       </section>
 

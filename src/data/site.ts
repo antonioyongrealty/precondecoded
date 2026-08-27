@@ -23,44 +23,60 @@ export type Project = {
 };
 
 /**
- * Placeholder allocation data — swap in the live VIP list any time.
+ * Featured GTA pre-construction projects.
  */
 export const projects: Project[] = [
   {
-    name: "Ellis Yards",
-    area: "Etobicoke — Islington & Bloor",
-    developer: "Sample Developments",
-    priceFrom: "$589,900",
-    occupancy: "2028",
+    name: "Seaton Whitevale",
+    area: "Pickering, Seaton",
+    developer: "Mattamy Homes",
+    priceFrom: "From $705,301",
+    occupancy: "2026",
     status: "VIP allocation open",
-    highlights: ["5% deposit structure", "Capped development charges", "Subway at the door"],
+    highlights: [
+      "New townhomes and detached homes",
+      "Growing master-planned community",
+      "Close to highways, GO Transit, parks and amenities",
+    ],
   },
   {
-    name: "Meridian Union",
-    area: "Downtown Toronto — King West",
-    developer: "Sample Developments",
-    priceFrom: "$724,000",
-    occupancy: "2029",
-    status: "Platinum access",
-    highlights: ["Free assignment", "1 year free maintenance", "Right to lease during interim"],
+    name: "Upper East Side",
+    area: "Unionville, Markham",
+    developer: "Fieldgate Homes",
+    priceFrom: "Towns from $1.063M | Singles from $1.393M",
+    occupancy: "TBD",
+    status: "VIP allocation open",
+    highlights: [
+      "Unionville's successful community returns",
+      "Premium freehold towns and detached homes",
+      "Close to top schools, parks and Unionville amenities",
+    ],
   },
   {
-    name: "North Line Towns",
-    area: "Vaughan — Highway 7",
-    developer: "Sample Developments",
-    priceFrom: "$829,000",
+    name: "Whitby Meadows",
+    area: "Whitby",
+    developer: "Fieldgate Homes",
+    priceFrom: "From $861,938",
     occupancy: "2027",
-    status: "Registering now",
-    highlights: ["Freehold towns", "Extended deposit", "$20K décor credit"],
+    status: "VIP allocation open",
+    highlights: [
+      "36' and 40' detached homes with double-car garages",
+      "Family-friendly community near parks and schools",
+      "Convenient access to Highways 401, 407 and 412",
+    ],
   },
   {
-    name: "Harbour Bend",
-    area: "Mississauga — Port Credit",
-    developer: "Sample Developments",
-    priceFrom: "$649,500",
-    occupancy: "2028",
+    name: "Montara",
+    area: "Aurora",
+    developer: "Treasure Hill",
+    priceFrom: "From $799,900",
+    occupancy: "2027–2028",
     status: "VIP allocation open",
-    highlights: ["Lakeview exposures", "Parking discount", "Assignment fee waived"],
+    highlights: [
+      "Freehold townhomes up to 2,400 sq. ft.",
+      "Two-car garages",
+      "Minutes from Magna Golf Club and Highway 404",
+    ],
   },
 ];
 
