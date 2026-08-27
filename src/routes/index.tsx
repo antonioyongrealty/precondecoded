@@ -218,6 +218,50 @@ function Index() {
         </div>
       </section>
 
+      {/* Reviews */}
+      <section id="reviews" className="border-y border-border/60 bg-card/30 py-20 md:py-24">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <div className="max-w-2xl">
+              <p className="text-sm font-semibold uppercase tracking-widest text-accent">Reviews</p>
+              <h2 className="mt-3 text-3xl font-bold md:text-4xl">What clients say</h2>
+            </div>
+            <Button asChild variant="outline">
+              <a href={GOOGLE_PROFILE} target="_blank" rel="noreferrer">
+                <Star className="h-4 w-4" /> Read all 12 reviews on Google
+              </a>
+            </Button>
+          </div>
+
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {reviews.map((r) => (
+              <figure key={r.name + r.context} className="rounded-2xl border border-border bg-card p-7">
+                <div className="flex gap-1 text-accent">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Star key={i} className="h-4 w-4 fill-current" />
+                  ))}
+                </div>
+                <blockquote className="mt-5 text-sm leading-relaxed text-muted-foreground">
+                  “{r.quote}”
+                </blockquote>
+                <figcaption className="mt-5 text-sm font-medium">
+                  {r.name}
+                  <span className="block text-xs font-normal text-muted-foreground">
+                    {r.context}
+                  </span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+
+          <p className="mt-6 text-xs text-muted-foreground">
+            12 verified reviews live on our Google Business Profile.
+          </p>
+
+        </div>
+      </section>
+
+
       {/* Projects */}
       <section id="projects" className="border-y border-border/60 bg-card/30 py-20 md:py-24">
         <div className="mx-auto max-w-6xl px-6">
