@@ -1,10 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { getRequestOrigin } from "@/lib/origin.functions";
+import { useCallback, useEffect, useState } from "react";
 import {
   ArrowRight,
   BadgeDollarSign,
   Building2,
   CalendarClock,
+  ChevronLeft,
+  ChevronRight,
   FileSearch,
   KeyRound,
   Mail,
