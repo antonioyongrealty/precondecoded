@@ -333,33 +333,6 @@ function Index() {
         </div>
       </section>
 
-      {/* Video */}
-      <section id="watch" className="mx-auto max-w-6xl px-6 py-20 md:py-24">
-        <div className="grid items-center gap-10 md:grid-cols-2">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-widest text-accent">Watch</p>
-            <h2 className="mt-3 text-3xl font-bold md:text-4xl">Pre-con, decoded on video</h2>
-            <p className="mt-4 text-muted-foreground">
-              Short walkthroughs of the things that cost buyers money: occupancy fees, capped
-              development charges, assignment clauses, and how to read a price list against
-              comparable resale.
-            </p>
-            <Button asChild variant="accent" className="mt-7">
-              <a href={ONBOARDING_FORM} target="_blank" rel="noreferrer">
-                Get new videos by email
-              </a>
-            </Button>
-          </div>
-          <div className="flex aspect-video items-center justify-center rounded-3xl border border-border bg-card text-center">
-            <div className="px-6">
-              <PlayCircle className="mx-auto h-10 w-10 text-accent" />
-              <p className="mt-3 text-sm text-muted-foreground">
-                Video slot ready. Send the YouTube link and it goes live here.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Reviews */}
       <section id="reviews" className="border-y border-border/60 bg-card/30 py-20 md:py-24">
