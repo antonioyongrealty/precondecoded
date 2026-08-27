@@ -1,10 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { getRequestOrigin } from "@/lib/origin.functions";
+import { useCallback, useEffect, useState } from "react";
 import {
   ArrowRight,
   BadgeDollarSign,
   Building2,
   CalendarClock,
+  ChevronLeft,
+  ChevronRight,
   FileSearch,
   KeyRound,
   Mail,
@@ -125,6 +128,30 @@ const steps = [
 
 
 function Index() {
+  const reviewsPerPage = 3;
+  const reviewPages = Math.ceil(reviews.length / reviewsPerPage);
+  const [reviewPage, setReviewPage] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  const nextReviewPage = useCallback(() => {
+    setReviewPage((p) => (p + 1) % reviewPages);
+  }, [reviewPages]);
+
+  const prevReviewPage = useCallback(() => {
+    setReviewPage((p) => (p - 1 + reviewPages) % reviewPages);
+  }, [reviewPages]);
+
+  useEffect(() => {
+    if (reviewPages <= 1 || isPaused) return;
+    const interval = setInterval(nextReviewPage, 5000);
+    return () => clearInterval(interval);
+  }, [reviewPages, isPaused, nextReviewPage]);
+
+  const visibleReviews = reviews.slice(
+    reviewPage * reviewsPerPage,
+    reviewPage * reviewsPerPage + reviewsPerPage
+  );
+
   return (
     <div className="min-h-screen bg-background">
       <SiteHeader />
@@ -219,7 +246,12 @@ function Index() {
       </section>
 
       {/* Reviews */}
-      <section id="reviews" className="border-y border-border/60 bg-card/30 py-20 md:py-24">
+      <section
+        id="reviews"
+        className="border-y border-border/60 bg-card/30 py-20 md:py-24"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+      >
         <div className="mx-auto max-w-6xl px-6">
           <div className="flex flex-wrap items-end justify-between gap-4">
             <div className="max-w-2xl">
@@ -233,28 +265,67 @@ function Index() {
             </Button>
           </div>
 
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {reviews.map((r) => (
-              <figure key={r.name + r.context} className="rounded-2xl border border-border bg-card p-7">
-                <div className="flex gap-1 text-accent">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-current" />
-                  ))}
-                </div>
-                <blockquote className="mt-5 text-sm leading-relaxed text-muted-foreground">
-                  “{r.quote}”
-                </blockquote>
-                <figcaption className="mt-5 text-sm font-medium">
-                  {r.name}
-                  <span className="block text-xs font-normal text-muted-foreground">
-                    {r.context}
-                  </span>
-                </figcaption>
-              </figure>
-            ))}
+          <div className="relative mt-12">
+            <div className="grid gap-6 md:grid-cols-3">
+              {visibleReviews.map((r) => (
+                <figure key={r.name + r.context} className="rounded-2xl border border-border bg-card p-7">
+                  <div className="flex gap-1 text-accent">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <Star key={i} className="h-4 w-4 fill-current" />
+                    ))}
+                  </div>
+                  <blockquote className="mt-5 text-sm leading-relaxed text-muted-foreground">
+                    “{r.quote}”
+                  </blockquote>
+                  <figcaption className="mt-5 text-sm font-medium">
+                    {r.name}
+                    <span className="block text-xs font-normal text-muted-foreground">
+                      {r.context}
+                    </span>
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+
+            {reviewPages > 1 && (
+              <>
+                <button
+                  type="button"
+                  onClick={prevReviewPage}
+                  className="absolute left-0 top-1/2 -translate-x-4 -translate-y-1/2 rounded-full border border-border bg-card p-2 text-muted-foreground shadow-sm transition-colors hover:text-accent md:-translate-x-6"
+                  aria-label="Previous reviews"
+                >
+                  <ChevronLeft className="h-5 w-5" />
+                </button>
+                <button
+                  type="button"
+                  onClick={nextReviewPage}
+                  className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 rounded-full border border-border bg-card p-2 text-muted-foreground shadow-sm transition-colors hover:text-accent md:translate-x-6"
+                  aria-label="Next reviews"
+                >
+                  <ChevronRight className="h-5 w-5" />
+                </button>
+              </>
+            )}
           </div>
 
-          <p className="mt-6 text-xs text-muted-foreground">
+          {reviewPages > 1 && (
+            <div className="mt-8 flex justify-center gap-2">
+              {Array.from({ length: reviewPages }).map((_, i) => (
+                <button
+                  key={i}
+                  type="button"
+                  onClick={() => setReviewPage(i)}
+                  className={`h-2 rounded-full transition-all ${
+                    i === reviewPage ? "w-6 bg-accent" : "w-2 bg-muted-foreground/30 hover:bg-muted-foreground/50"
+                  }`}
+                  aria-label={`Go to review page ${i + 1}`}
+                />
+              ))}
+            </div>
+          )}
+
+          <p className="mt-6 text-center text-xs text-muted-foreground md:text-left">
             12 verified reviews live on our Google Business Profile.
           </p>
 
