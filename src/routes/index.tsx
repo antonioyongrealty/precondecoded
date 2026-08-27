@@ -128,6 +128,30 @@ const steps = [
 
 
 function Index() {
+  const reviewsPerPage = 3;
+  const reviewPages = Math.ceil(reviews.length / reviewsPerPage);
+  const [reviewPage, setReviewPage] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  const nextReviewPage = useCallback(() => {
+    setReviewPage((p) => (p + 1) % reviewPages);
+  }, [reviewPages]);
+
+  const prevReviewPage = useCallback(() => {
+    setReviewPage((p) => (p - 1 + reviewPages) % reviewPages);
+  }, [reviewPages]);
+
+  useEffect(() => {
+    if (reviewPages <= 1 || isPaused) return;
+    const interval = setInterval(nextReviewPage, 5000);
+    return () => clearInterval(interval);
+  }, [reviewPages, isPaused, nextReviewPage]);
+
+  const visibleReviews = reviews.slice(
+    reviewPage * reviewsPerPage,
+    reviewPage * reviewsPerPage + reviewsPerPage
+  );
+
   return (
     <div className="min-h-screen bg-background">
       <SiteHeader />
