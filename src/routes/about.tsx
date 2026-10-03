@@ -18,10 +18,10 @@ export const Route = createFileRoute("/about")({
         { property: "og:title", content: title },
         { property: "og:description", content: description },
         { property: "og:type", content: "profile" },
-        { property: "og:url", content: "https://precondecoded.lovable.app/about" },
+        { property: "og:url", content: "https://www.precondecoded.com/about" },
         { name: "twitter:card", content: "summary" },
       ],
-      links: [{ rel: "canonical", href: "https://precondecoded.lovable.app/about" }],
+      links: [{ rel: "canonical", href: "https://www.precondecoded.com/about" }],
     };
   },
   component: About,
